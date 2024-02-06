@@ -123,16 +123,20 @@ void MostrarMediaDeBanda(){
 	ExibirTituloDaOpcao("Exibir Nota Média da Banda");
 	Console.Write("Digite o nome da banda que deseja verificar: ");
 	string nomeDaBanda = Console.ReadLine()!;
-	float media = 0;
+	//float media = 0;
 	if(bandasRegistradas.ContainsKey(nomeDaBanda)){
-		if(bandasRegistradas[nomeDaBanda].Count > 0){
+		Console.WriteLine($"Média da banda: {bandasRegistradas[nomeDaBanda].Average()}");
+		/*if(bandasRegistradas[nomeDaBanda].Count > 0){	
 			foreach(int nota in bandasRegistradas[nomeDaBanda]){
 				media = nota + media;
 			}			
 			media = media / bandasRegistradas[nomeDaBanda].Count;
 		} 
 		Console.WriteLine($"Nota do {nomeDaBanda}: {media}");
-	} else {
+	 */
+	}
+	else {
+
 		Console.WriteLine("Banda Inválida, favor verificar novamente");
 	}
 	Console.WriteLine("Digite uma tecla para voltar ao menu Principal");
